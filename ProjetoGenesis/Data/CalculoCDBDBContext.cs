@@ -11,7 +11,6 @@ namespace ProjetoGenesis.Data
         }
 
         public DbSet<CalculoCDBDBContext> CalculoCDB { get; set; }
-
     }
 
     protected override void OnModelCreating(ModelBuilder modelBilder)
