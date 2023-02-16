@@ -319,15 +319,17 @@
 
 
     <p><label>
-        <input Style="width: 100%;" placeholder="Valor monetário positivo" autofocus
-          #customerInput>{{customerInput.value}}
+        <input type="number" ng-pattern="/^[1-9][0-9]*$/" Style="width: 100%;" placeholder="Valor monetário positivo"
+          autofocus #customerInput>{{customerInput.value}}
       </label></p>
     <br>
-
-    <p><label>
-        <input Style="width: 100%;" type='number' placeholder="Prazo em meses maior que 1(um) para resgate da aplicação"
-          #customerInput2>{{customerInput.value}}
-      </label></p>
+    <p>
+      <label>
+        <input ng-pattern="/^[1-9][0-9]*$/" min="2" max="12" maxlength="2" Style="width: 100%;" type='number'
+          placeholder="Prazo em meses maior que 1(um) para resgate da aplicação"
+          #customerInput2>{{customerInput2.value}}
+      </label>
+    </p>
     <br>
     <button mat-raised-button style="width: 100%">Calcular</button>
   </form>
