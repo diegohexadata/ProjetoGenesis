@@ -1,5 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'input-overview-example',
+  styleUrls: ['input-overview-example.css'],
+  templateUrl: 'input-overview-example.html',
+})
+export class InputOverviewExample { }
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
