@@ -315,19 +315,20 @@
   <!-- Resources -->
   <h2>Calcular CDB</h2>
   <p>
-  <form (submit)="$event.preventDefault()">
+  <form (submit)="$event.preventDefault()" style="width: 400px;">
 
 
     <p><label>
-        <div style="width: 100%;">Valor monetário positivo: </div><input #customerInput>{{customerInput.value}}
+        <input Style="width: 100%;" placeholder="Valor monetário positivo" autofocus
+          #customerInput>{{customerInput.value}}
       </label></p>
     <br>
 
     <p><label>
-        <div style="width: 100%;">Prazo em meses maior que 1(um) para resgate da aplicação:</div> <input type='number'
+        <input Style="width: 100%;" type='number' placeholder="Prazo em meses maior que 1(um) para resgate da aplicação"
           #customerInput2>{{customerInput.value}}
       </label></p>
-
-    <button mat-raised-button>Calcular</button>
+    <br>
+    <button mat-raised-button style="width: 100%">Calcular</button>
   </form>
 </div>
