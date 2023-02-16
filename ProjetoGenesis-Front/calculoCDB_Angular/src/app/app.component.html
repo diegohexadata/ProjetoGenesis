@@ -319,8 +319,8 @@
 
 
     <p><label>
-        <input type="number" ng-pattern="/^[1-9][0-9]*$/" Style="width: 100%;" placeholder="Valor monetário positivo"
-          autofocus #customerInput>{{customerInput.value}}
+        <input type="number" min="1" ng-pattern="/^[1-9][0-9]*$/" Style="width: 100%;"
+          placeholder="Valor monetário positivo" autofocus #customerInput>{{customerInput.value}}
       </label></p>
     <br>
     <p>
