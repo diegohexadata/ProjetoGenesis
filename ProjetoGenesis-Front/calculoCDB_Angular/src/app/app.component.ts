@@ -9,14 +9,18 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 export class AppComponent {
   title = 'calculoCDB_Angular';
-
   valorInicial = 0;
   prazo = 0;
   imposto = 0;
   rendimento = 0;
-  resultadoBruto = '';
-  resultadoLiquido = '';
+  resultadoBruto = '0';
+  resultadoLiquido = '0';
   angForm!: FormGroup;
+  onBlur(): void {
+    this.angForm = this.fb.group({
+
+    });
+  }
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -28,7 +32,7 @@ export class AppComponent {
   }
 
   calcularSoma() {
-    alert(this.angForm.value["Prazo"]);
+    this.zerarVariavel();
     debugger;
     this.valorInicial = parseInt(this.angForm.value["Valor"]); //cdi
     this.prazo = parseInt(this.angForm.value["Prazo"]);
@@ -57,14 +61,23 @@ export class AppComponent {
       // (this.prazo === 1 ? this.valorInicial : this.rendimento)
 
       //soma dos rendimentos
-      this.rendimento = this.rendimento + ((this.prazo === 1 ? this.valorInicial : this.rendimento) * 1 + (108 * 0.9));
+      this.rendimento += ((this.prazo === 1 ? this.valorInicial : this.rendimento) * 1 + (108 * 0.9));
     }
 
     this.resultadoBruto = this.rendimento.toString();
     this.resultadoLiquido = (this.rendimento - this.valorInicial).toString();
-  }
-}
 
-function ConvertNumberToString(arg0: number): string {
-  throw new Error('Function not implemented.');
+    if (this.angForm.valid) {
+      // alert('Sua proposta foi enviada para o servidor');
+    }
+
+  }
+  zerarVariavel() {
+    // this.valorInicial = 0;
+    // this.prazo = 0;
+    this.imposto = 0;
+    this.rendimento = 0;
+    this.resultadoBruto = '0';
+    this.resultadoLiquido = '0';
+  }
 }
