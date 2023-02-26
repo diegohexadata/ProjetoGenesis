@@ -61,7 +61,7 @@ export class AppComponent {
       // (this.prazo === 1 ? this.valorInicial : this.rendimento)
 
       //soma dos rendimentos
-      this.rendimento += ((this.prazo === 1 ? this.valorInicial : this.rendimento) * 1 + (108 * 0.9));
+      this.rendimento += ((this.prazo === 1 ? this.valorInicial : this.rendimento) / 100 * 1 + (108 * 0.9));
     }
 
     this.resultadoBruto = this.rendimento.toString();
